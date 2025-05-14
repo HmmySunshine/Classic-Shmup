@@ -4,8 +4,6 @@ extends Area2D
 	
 func _process(delta: float) -> void:
 	position.y += speed * delta
-	print(delta)
-
 func Start(pos: Vector2):
 	position = pos
 

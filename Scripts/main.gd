@@ -5,7 +5,7 @@ var score = 0
 
 func _ready() -> void:
 	SpawnEnemies()
-
+	
 func SpawnEnemies():
 	for x in range(9):
 		for y in range(3):
@@ -17,3 +17,4 @@ func SpawnEnemies():
 	
 func _on_enemy_died(value):
 	score += value
+	$CanvasLayer/UI.UpdateScore(score)

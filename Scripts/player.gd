@@ -1,22 +1,36 @@
 extends Area2D
 
+signal died
+signal shield_changed
 var canShoot: bool = true
 @export var speed: float = 150
 @export var coolDown = 0.25
 @export var bulletScene: PackedScene
+@export var maxShield = 10 # 护盾值
+
+#设置值的时候会调用函数
+var shield = maxShield:
+	set = SetShield
 
 @onready var screenSize = get_viewport_rect().size
 @onready var clampMinSize = Vector2(8, 8)
 @onready var clampMaxSize = screenSize - clampMinSize
 @onready var startPosition: Vector2 = Vector2(screenSize.x / 2, screenSize.y - 64)
 
-
+func SetShield(value: int):
+	shield = min(maxShield, value)
+	shield_changed.emit(maxShield, shield)
+	if shield <= 0:
+		hide()
+		died.emit()
+		
 func _ready() -> void:
 	Start()
 	
 func Start():
 	position = startPosition
 	$GunCooldown.wait_time = 0.25
+	shield = 10
 
 func _process(delta: float) -> void:
 	var input = GetDirection()
@@ -58,6 +72,14 @@ func MoveMent(delta: float, direction: Vector2):
 	position += speed * delta * direction
 	position = position.clamp(clampMinSize, clampMaxSize)
 
-
 func _on_gun_cooldown_timeout() -> void:
 	canShoot = true
+
+#触碰敌人护盾值减少
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemy_bullet"):
+		shield -= maxShield / 4
+	
+	if area.is_in_group("enemies"):
+		area.Explode()
+		shield -= maxShield / 2

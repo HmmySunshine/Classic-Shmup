@@ -13,7 +13,8 @@ func _process(delta: float) -> void:
 	if position.y > screenSize.y + 32:
 		Start(startPosition)
 
-func PlayEntryAnimation(startPosition: Vector2):
+func PlayEntryAnimation():
+	
 	await get_tree().create_timer(randf_range(0.25, 0.55)).timeout
 	var tween: Tween = create_tween().set_trans(Tween.TRANS_BACK)
 	tween.tween_property(self, "position:y", startPosition.y, 1.4)
@@ -24,7 +25,7 @@ func StartActivityTimers():
 	StartMoveTimers()
 	StartShootTimers()
 
-func StartMoveTimers(moveMinTime: float = 5.0, moveMaxTime: float = 20.0, shootMinTime: float = 4.0, shootMaxTime: float = 20.0):
+func StartMoveTimers(moveMinTime: float = 5.0, moveMaxTime: float = 20.0):
 	# ⭐ 注意：设置默认值时，类型提示 float 后面直接跟 = 默认值 ⭐
 	# ⭐ 默认值必须是常量 ⭐
 	$MoveTimer.wait_time = randf_range(moveMinTime, moveMaxTime) # 使用参数设置 MoveTimer 的时间
@@ -37,9 +38,9 @@ func StartShootTimers(shootMinTime: float = 4.0, shootMaxTime: float = 20.0):
 func Start(pos: Vector2):
 	speed = 0
 	position = Vector2(pos.x, -pos.y)
+	startPosition = pos
 	#将敌人放在屏幕外的位置
-	print(position)
-	PlayEntryAnimation(pos)
+	PlayEntryAnimation()
 	StartActivityTimers()
 
 func _on_move_timer_timeout() -> void:
