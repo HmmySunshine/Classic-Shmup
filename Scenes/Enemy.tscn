@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5kmcjidgvyd"]
+[gd_scene load_steps=10 format=3 uid="uid://b5kmcjidgvyd"]
 
 [ext_resource type="Texture2D" uid="uid://y5murwjfnfni" path="res://Assets/Mini Pixel Pack 3/Enemies/Bon_Bon (16 x 16).png" id="1_m1htj"]
 [ext_resource type="Script" uid="uid://chfd6ogk8j3rw" path="res://Scripts/enemy.gd" id="1_wovta"]
 [ext_resource type="Texture2D" uid="uid://3vw1e2kd547v" path="res://Assets/Mini Pixel Pack 3/Effects/Explosion (16 x 16).png" id="2_wovta"]
+[ext_resource type="AudioStream" uid="uid://cxw5lqqpjn0eg" path="res://Assets/Mini Pixel Pack 3/Audios/whoosh-drum-hits-169007.mp3" id="4_kpr8r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1htj"]
 size = Vector2(14, 8)
@@ -156,6 +157,9 @@ one_shot = true
 
 [node name="ShootTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_kpr8r")
 
 [connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

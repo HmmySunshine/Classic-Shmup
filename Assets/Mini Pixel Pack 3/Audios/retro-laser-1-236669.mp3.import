@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3du3dbrhk881"
+path="res://.godot/imported/retro-laser-1-236669.mp3-ab4a84ada44f3cd8188edfb41178e7d7.mp3str"
+
+[deps]
+
+source_file="res://Assets/Mini Pixel Pack 3/Audios/retro-laser-1-236669.mp3"
+dest_files=["res://.godot/imported/retro-laser-1-236669.mp3-ab4a84ada44f3cd8188edfb41178e7d7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

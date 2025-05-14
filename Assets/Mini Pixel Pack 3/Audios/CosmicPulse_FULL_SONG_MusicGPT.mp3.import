@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wa3ttotu0s1w"
+path="res://.godot/imported/CosmicPulse_FULL_SONG_MusicGPT.mp3-049e49e4ff99645c913ccb9dad381870.mp3str"
+
+[deps]
+
+source_file="res://Assets/Mini Pixel Pack 3/Audios/CosmicPulse_FULL_SONG_MusicGPT.mp3"
+dest_files=["res://.godot/imported/CosmicPulse_FULL_SONG_MusicGPT.mp3-049e49e4ff99645c913ccb9dad381870.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

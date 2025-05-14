@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://u7qqc3jn10qg"
-path="res://.godot/imported/Player_missile_shots (16 x 16).png-5023591894ad1b8924b7b174fbc0a148.ctex"
+path="res://.godot/imported/Player_missile_shots (16 x 16).png-371529ecd01a20fdb4f905efd91cb8d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Mini Pixel Pack 3/Projectiles/Player_missile_shots (16 x 16).png"
-dest_files=["res://.godot/imported/Player_missile_shots (16 x 16).png-5023591894ad1b8924b7b174fbc0a148.ctex"]
+source_file="res://Assets/Mini Pixel Pack 3/Player_missile_shots (16 x 16).png"
+dest_files=["res://.godot/imported/Player_missile_shots (16 x 16).png-371529ecd01a20fdb4f905efd91cb8d1.ctex"]
 
 [params]
 

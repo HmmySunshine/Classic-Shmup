@@ -53,6 +53,7 @@ func _on_shoot_timer_timeout() -> void:
 	StartShootTimers()
 
 func Explode():
+	$AudioStreamPlayer2D.play()
 	speed = 0
 	$AnimationPlayer.play("explode")
 	#不再碰撞检测

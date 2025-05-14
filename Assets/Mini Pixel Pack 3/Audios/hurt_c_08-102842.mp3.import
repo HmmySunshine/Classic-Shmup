@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ct34xwxp6l85l"
+path="res://.godot/imported/hurt_c_08-102842.mp3-789e64af4dfc31750577966047a7f728.mp3str"
+
+[deps]
+
+source_file="res://Assets/Mini Pixel Pack 3/Audios/hurt_c_08-102842.mp3"
+dest_files=["res://.godot/imported/hurt_c_08-102842.mp3-789e64af4dfc31750577966047a7f728.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

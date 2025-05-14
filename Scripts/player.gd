@@ -4,9 +4,9 @@ signal died
 signal shield_changed
 var canShoot: bool = true
 @export var speed: float = 150
-@export var coolDown = 0.25
+@export var coolDown: float = 0.25
 @export var bulletScene: PackedScene
-@export var maxShield = 10 # 护盾值
+@export var maxShield: int = 10 # 护盾值
 
 #设置值的时候会调用函数
 var shield = maxShield:
@@ -25,6 +25,7 @@ func SetShield(value: int):
 		died.emit()
 		
 func _ready() -> void:
+	hide()
 	Start()
 	
 func Start():
@@ -50,6 +51,7 @@ func _process(delta: float) -> void:
 func Shoot():
 	if not canShoot:
 		return
+	$AudioStreamPlayer.play()
 	canShoot = false
 	$GunCooldown.start()
 	SpawnBullet()
@@ -77,6 +79,7 @@ func _on_gun_cooldown_timeout() -> void:
 
 #触碰敌人护盾值减少
 func _on_area_entered(area: Area2D) -> void:
+	$AudioStreamPlayer2.play()
 	if area.is_in_group("enemy_bullet"):
 		shield -= maxShield / 4
 	
